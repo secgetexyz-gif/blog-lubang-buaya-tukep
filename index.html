@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jejak Langkah di Lubang Buaya — Jurnal Kunjungan Sejarah</title>
+  <meta name="description" content="Jurnal lapangan interaktif mengunjungi Kompleks Monumen Pancasila Sakti, Lubang Buaya: arsip pers 1948, bangunan asli, kendaraan bersejarah, dan refleksi sejarah 1965." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f5f8;
+      --surface: #ffffff;
+      --surface-alt: #e9eef4;
+      --ink: #132234;
+      --ink-muted: #526377;
+      --primary: #173a5e;
+      --primary-soft: rgba(23, 58, 94, 0.1);
+      --brass: #c0782b;
+      --brass-soft: rgba(192, 120, 43, 0.14);
+      --border: #d7e0ea;
+      --card-shadow: 0 10px 28px rgba(19, 34, 52, 0.07);
+      --ok: #1b7a4c;
+      --ok-soft: rgba(27, 122, 76, 0.13);
+      --bad: #c0392b;
+      --bad-soft: rgba(192, 57, 43, 0.13);
+      --radius: 18px;
+      --sidebar-w: 250px;
+    }
+
+    [data-theme="sepia"] {
+      --bg: #f3ecdc;
+      --surface: #fbf7ee;
+      --surface-alt: #e8dec8;
+      --ink: #2b2116;
+      --ink-muted: #665541;
+      --primary: #5c3d22;
+      --primary-soft: rgba(92, 61, 34, 0.12);
+      --brass: #9e5b1e;
+      --brass-soft: rgba(158, 91, 30, 0.15);
+      --border: #d8cbb0;
+      --card-shadow: 0 10px 28px rgba(43, 33, 22, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0c141f;
+      --surface: #131f2e;
+      --surface-alt: #1b2b3e;
+      --ink: #ecf1f7;
+      --ink-muted: #9db0c7;
+      --primary: #63a4ff;
+      --primary-soft: rgba(99, 164, 255, 0.14);
+      --brass: #e0a054;
+      --brass-soft: rgba(224, 160, 84, 0.16);
+      --border: #25384f;
+      --card-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+      --ok: #4ade80;
+      --ok-soft: rgba(74, 222, 128, 0.14);
+      --bad: #f87171;
+      --bad-soft: rgba(248, 113, 113, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.78;
+      font-size: 16.5px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    /* Top Utility Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    [data-theme="dark"] .brand-badge {
+      color: #0c141f;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.02rem;
+      line-height: 1.15;
+    }
+
+    .brand-text span {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .theme-switcher {
+      display: inline-flex;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      color: var(--ink-muted);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    [data-theme="dark"] .mode-btn.active {
+      color: #0c141f;
+    }
+
+    /* Mobile Quick Nav Strip */
+    .mobile-strip {
+      display: none;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+
+    .mobile-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-strip a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+
+    .mobile-strip a.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .mobile-strip a.active {
+      color: #0c141f;
+    }
+
+    /* Asymmetric Exhibition Hero */
+    .hero-shell {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 36px 24px 28px;
+    }
+
+    .hero-grid {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 38px;
+      box-shadow: var(--card-shadow);
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--brass));
+    }
+
+    .catalog-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--brass);
+      background: var(--brass-soft);
+      padding: 6px 13px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-copy h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 3.8vw, 3.15rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+
+    .hero-copy .lead {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-tile {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .stat-tile strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.28rem;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .stat-tile span {
+      font-size: 0.77rem;
+      color: var(--ink-muted);
+    }
+
+    .author-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 18px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    .author-strip strong {
+      color: var(--ink);
+    }
+
+    .hero-poster {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+      aspect-ratio: 3 / 4;
+      background: var(--surface-alt);
+      cursor: zoom-in;
+    }
+
+    .hero-poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .hero-poster:hover img {
+      transform: scale(1.03);
+    }
+
+    .poster-tag {
+      position: absolute;
+      inset: auto 14px 14px 14px;
+      background: rgba(12, 20, 31, 0.82);
+      backdrop-filter: blur(8px);
+      color: #f4f7fb;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .poster-tag strong {
+      display: block;
+      color: #f3c178;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    /* Interactive Bento Zone Navigator */
+    .zone-strip {
+      max-width: 1220px;
+      margin: 0 auto 30px;
+      padding: 0 24px;
+    }
+
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .zone-card {
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      color: var(--ink);
+      transition: all 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .zone-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brass);
+      box-shadow: var(--card-shadow);
+    }
+
+    .zone-num {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--brass);
+    }
+
+    .zone-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .zone-card p {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* Main 2-Column Sidebar + Content Workspace */
+    .workspace {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 12px 24px 80px;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Sticky Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 78px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .sidebar-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brass);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .toc-list a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 8px 11px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.2s ease;
+    }
+
+    .toc-list a:hover {
+      background: var(--surface-alt);
+      color: var(--ink);
+    }
+
+    .toc-list a.active {
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .toc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    .toc-list a.active .toc-dot {
+      background: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-soft);
+    }
+
+    .read-meter {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px;
+    }
+
+    .read-meter-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--ink-muted);
+    }
+
+    .read-meter-top strong {
+      color: var(--primary);
+    }
+
+    .meter-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: var(--border);
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--brass));
+      border-radius: 999px;
+      transition: width 0.15s linear;
+    }
+
+    /* Chapters & Editorial Cards */
+    .chapter {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      margin-bottom: 30px;
+      box-shadow: var(--card-shadow);
+      scroll-margin-top: 86px;
+    }
+
+    .chapter-head {
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-code {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--brass);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .chapter h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.48rem, 2.5vw, 2rem);
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .chapter p {
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .chapter p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Split Photo + Prose */
+    .media-split {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 26px;
+      align-items: start;
+      margin: 22px 0;
+    }
+
+    .media-split.flip {
+      grid-template-columns: 1fr 270px;
+    }
+
+    .frame-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .frame-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.35s ease;
+    }
+
+    .frame-card img:hover {
+      transform: scale(1.02);
+    }
+
+    .frame-card figcaption {
+      padding: 11px 14px;
+      font-size: 0.83rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      border-top: 1px solid var(--border);
+    }
+
+    .frame-card figcaption strong {
+      color: var(--ink);
+    }
+
+    /* Dual Portrait Pair */
+    .portrait-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    .portrait-pair .frame-card img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+
+    /* Interactive Moment Switcher (Formal vs Jump) */
+    .moment-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin: 24px 0;
+    }
+
+    .moment-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .moment-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .toggle-pill {
+      display: inline-flex;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .toggle-pill button {
+      border: none;
+      background: transparent;
+      color: var(--ink-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-pill button.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    [data-theme="dark"] .toggle-pill button.active {
+      color: #0c141f;
+    }
+
+    .moment-stage {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .moment-img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: zoom-in;
+    }
+
+    .moment-img-wrap img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+      animation: fadePop 0.3s ease;
+    }
+
+    /* Interactive 3D Flip Cards for 7 Pahlawan Revolusi */
+    .sub-widget {
+      margin: 26px 0 8px;
+    }
+
+    .widget-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .widget-head h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.22rem;
+      color: var(--primary);
+    }
+
+    .widget-head span {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .flip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+      gap: 14px;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      height: 178px;
+      cursor: pointer;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+    }
+
+    .flip-front {
+      background: var(--surface-alt);
+    }
+
+    .flip-front .f-rank {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.69rem;
+      color: var(--brass);
+      font-weight: 600;
+    }
+
+    .flip-front .f-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .flip-front .f-tip {
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+    }
+
+    .flip-back {
+      background: var(--primary);
+      color: #f4f7fb;
+      transform: rotateY(180deg);
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .flip-back {
+      background: #1d3557;
+      color: #f4f7fb;
+    }
+
+    .flip-back strong {
+      font-size: 0.84rem;
+      color: #f5c37a;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .flip-back p {
+      font-size: 0.79rem;
+      line-height: 1.48;
+      color: #eef3f9;
+      margin: 0;
+    }
+
+    /* Archival Quote */
+    .archive-quote {
+      margin: 22px 0;
+      padding: 20px 24px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brass);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .archive-quote p {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .archive-quote footer {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    /* Interactive Accordion (Bangunan & Museum Paseban) */
+    .accordion {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .acc-item {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface-alt);
+      overflow: hidden;
+    }
+
+    .acc-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 15px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.96rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .acc-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .acc-item.open .acc-icon {
+      transform: rotate(45deg);
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .acc-item.open .acc-icon {
+      color: #0c141f;
+    }
+
+    .acc-body {
+      display: none;
+      padding: 0 18px 16px;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+
+    .acc-item.open .acc-body {
+      display: block;
+      animation: fadePop 0.25s ease;
+    }
+
+    /* Interactive Artifact Inspector (Bab 04) */
+    .artifact-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .art-btn {
+      background: var(--surface-alt);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      padding: 9px 15px;
+      border-radius: 11px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .art-btn:hover {
+      border-color: var(--brass);
+    }
+
+    .art-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .art-btn.active {
+      color: #0c141f;
+    }
+
+    .artifact-stage {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: start;
+      animation: fadePop 0.28s ease;
+    }
+
+    .artifact-stage img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .art-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .art-spec {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .art-spec span {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.69rem;
+      color: var(--brass);
+      text-transform: uppercase;
+    }
+
+    .art-spec strong {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    /* Curated Gallery */
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .f-chip {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .f-chip.active {
+      background: var(--brass);
+      color: #ffffff;
+      border-color: var(--brass);
+    }
+
+    .bento-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 12px;
+    }
+
+    .g-tile {
+      position: relative;
+      border-radius: 13px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 3 / 4;
+      cursor: zoom-in;
+      background: var(--surface-alt);
+    }
+
+    .g-tile.wide {
+      grid-column: span 2;
+      aspect-ratio: auto;
+    }
+
+    .g-tile.hide {
+      display: none;
+    }
+
+    .g-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .g-tile:hover img {
+      transform: scale(1.06);
+    }
+
+    .g-cap {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 26px 10px 9px;
+      background: linear-gradient(transparent, rgba(10, 18, 28, 0.86));
+      color: #ffffff;
+      font-size: 0.77rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Fact-Check Mini-Game (Benar atau Salah?) */
+    .fact-game {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .fg-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .streak-pill {
+      background: var(--brass-soft);
+      color: var(--brass);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+    }
+
+    .fg-statement {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      line-height: 1.48;
+      color: var(--ink);
+      margin-bottom: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      border-radius: 14px;
+    }
+
+    .fg-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .tf-btn {
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.96rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tf-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .tf-btn.right {
+      border-color: var(--ok);
+      background: var(--ok-soft);
+    }
+
+    .tf-btn.wrong {
+      border-color: var(--bad);
+      background: var(--bad-soft);
+    }
+
+    .fg-explain {
+      display: none;
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .fg-explain.show {
+      display: block;
+    }
+
+    .fg-explain.ok {
+      background: var(--ok-soft);
+      border: 1px solid var(--ok);
+    }
+
+    .fg-explain.bad {
+      background: var(--bad-soft);
+      border: 1px solid var(--bad);
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    [data-theme="dark"] .action-btn {
+      color: #0c141f;
+    }
+
+    .action-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    /* Interactive Visitor Reflection Pad */
+    .note-pad {
+      margin-top: 22px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .note-pad h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.12rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .note-pad p {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+    }
+
+    .note-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    .note-form input,
+    .note-form textarea {
+      width: 100%;
+      padding: 10px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.92rem;
+    }
+
+    .note-form textarea {
+      min-height: 78px;
+      resize: vertical;
+    }
+
+    .saved-notes {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .saved-note-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brass);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+
+    .saved-note-item strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--brass);
+      margin-bottom: 3px;
+    }
+
+    /* Site Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 34px 24px;
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 0.88rem;
+    }
+
+    .site-footer strong {
+      color: var(--ink);
+    }
+
+    /* Lightbox with Thumbnail Strip */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 13, 20, 0.95);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lb-top {
+      position: fixed;
+      top: 16px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .lb-badge {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    .lb-close,
+    .lb-arrow {
+      pointer-events: auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .lb-arrow {
+      position: fixed;
+      top: 46%;
+      transform: translateY(-50%);
+    }
+
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
+
+    .lb-main-img {
+      max-width: 86vw;
+      max-height: 66vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55);
+    }
+
+    .lb-cap {
+      color: #e9eff7;
+      font-size: 0.9rem;
+      text-align: center;
+      max-width: 680px;
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .lb-thumbs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      max-width: 90vw;
+      padding: 6px 4px;
+    }
+
+    .lb-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      opacity: 0.55;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .lb-thumb.active {
+      border-color: var(--brass);
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    .lb-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes fadePop {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding: 26px 22px;
+      }
+
+      .hero-poster {
+        max-width: 360px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .zone-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-strip {
+        display: block;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .chapter {
+        padding: 24px 18px;
+      }
+
+      .media-split,
+      .media-split.flip,
+      .moment-stage,
+      .artifact-stage,
+      .portrait-pair {
+        grid-template-columns: 1fr;
+      }
+
+      .media-split .frame-card,
+      .moment-img-wrap,
+      .artifact-stage img {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .hero-stats,
+      .art-specs {
+        grid-template-columns: 1fr;
+      }
+
+      .zone-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .g-tile.wide {
+        grid-column: span 1;
+        aspect-ratio: 4 / 3;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-wrap" href="#top">
+        <div class="brand-badge">JL</div>
+        <div class="brand-text">
+          <strong>Jurnal Lubang Buaya</strong>
+          <span>EKSPEDISI SEJARAH • MONUMEN PANCASILA SAKTI</span>
+        </div>
+      </a>
+      <div class="theme-switcher" role="group" aria-label="Pilih mode tampilan">
+        <button class="mode-btn active" data-set-theme="light">Terang</button>
+        <button class="mode-btn" data-set-theme="sepia">Arsip</button>
+        <button class="mode-btn" data-set-theme="dark">Malam</button>
+      </div>
+    </div>
+    <nav class="mobile-strip" id="mobileNav" aria-label="Navigasi cepat">
+      <a href="#bab-1">01. Kedatangan</a>
+      <a href="#bab-2">02. Monumen</a>
+      <a href="#bab-3">03. Sumur &amp; Diorama</a>
+      <a href="#bab-4">04. Arsip &amp; Kendaraan</a>
+      <a href="#bab-5">05. Galeri</a>
+      <a href="#bab-6">06. Cek Fakta</a>
+      <a href="#bab-7">07. Refleksi</a>
+    </nav>
+  </header>
+
+  <!-- Asymmetric Exhibition Hero -->
+  <section class="hero-shell">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="catalog-pill">JURNAL LAPANGAN • JAKARTA TIMUR</span>
+        <h1>Jejak Langkah di Lubang Buaya: Menyaksikan Saksi Bisu Sejarah 1965</h1>
+        <p class="lead">
+          Catatan perjalanan edukasi menyusuri Kompleks Monumen Pancasila Sakti—membaca langsung arsip majalah <em>Mimbar Indonesia</em> edisi 1948, melihat dari dekat diorama Rumah Penyiksaan, berdiri di tepi Sumur Maut, hingga mengamati kendaraan dinas asli peninggalan masa pergolakan.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-tile">
+            <strong>6 Zona</strong>
+            <span>Area bersejarah dikunjungi</span>
+          </div>
+          <div class="stat-tile">
+            <strong>10 Foto</strong>
+            <span>Dokumentasi asli lapangan</span>
+          </div>
+          <div class="stat-tile">
+            <strong>1948–1965</strong>
+            <span>Rentang arsip yang dipelajari</span>
+          </div>
+        </div>
+        <div class="author-strip">
+          <!-- GANTI NAMA PENULIS DI BAWAH INI JIKA PERLU -->
+          <span>Disusun oleh: <strong id="authorName">Catatan Pelajar Kelas XII</strong></span>
+          <span>•</span>
+          <span><strong>MAN 14 Jakarta</strong></span>
+          <span>•</span>
+          <span>Mata Pelajaran Sejarah Indonesia</span>
+        </div>
+      </div>
+
+      <div class="hero-poster" data-lightbox-src="images/monumen-arsitektur.jpg">
+        <img
+          src="images/monumen-arsitektur.jpg"
+          alt="Monumen Pancasila Sakti dengan patung tujuh Pahlawan Revolusi dan lambang Burung Garuda Pancasila menjulang ke langit"
+        />
+        <div class="poster-tag">
+          <strong>Ikon Kompleks • Lubang Buaya</strong>
+          Monumen Pancasila Sakti dengan dinding marmer putih, relief perunggu, dan patung tujuh Pahlawan Revolusi.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Bento Zone Navigator -->
+  <section class="zone-strip" aria-label="Peta zona kunjungan">
+    <div class="zone-grid">
+      <a class="zone-card" href="#bab-1">
+        <span class="zone-num">ZONA 01</span>
+        <h3>Pelataran Upacara &amp; Gedung Utama</h3>
+        <p>Kesan pertama melangkah ke kompleks museum yang lapang dan khidmat.</p>
+      </a>
+      <a class="zone-card" href="#bab-2">
+        <span class="zone-num">ZONA 02</span>
+        <h3>Monumen &amp; 7 Pahlawan Revolusi</h3>
+        <p>Kartu profil bolak-balik dan dua momen kebersamaan di pelataran monumen.</p>
+      </a>
+      <a class="zone-card" href="#bab-3">
+        <span class="zone-num">ZONA 03</span>
+        <h3>Sumur Maut &amp; Rumah Penyiksaan</h3>
+        <p>Dari lubang sempit berprasasti hingga sudut dekat diorama Mayjen S. Parman.</p>
+      </a>
+      <a class="zone-card" href="#bab-4">
+        <span class="zone-num">ZONA 04</span>
+        <h3>Arsip 1948 &amp; Koleksi Kendaraan</h3>
+        <p>Inspektor artefak: Mimbar Indonesia 1948, Toyota ★ 44-01, dan Truk Dodge.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Workspace: Sticky Sidebar + Chapters -->
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Daftar isi jurnal">
+      <span class="sidebar-label">Daftar Bab Jurnal</span>
+      <ul class="toc-list" id="sidebarNav">
+        <li><a href="#bab-1" class="active"><span class="toc-dot"></span> 01. Gerbang &amp; Atmosfer</a></li>
+        <li><a href="#bab-2"><span class="toc-dot"></span> 02. Monumen &amp; 7 Tokoh</a></li>
+        <li><a href="#bab-3"><span class="toc-dot"></span> 03. Sumur &amp; Rumah Asli</a></li>
+        <li><a href="#bab-4"><span class="toc-dot"></span> 04. Arsip &amp; Kendaraan</a></li>
+        <li><a href="#bab-5"><span class="toc-dot"></span> 05. Galeri 10 Foto</a></li>
+        <li><a href="#bab-6"><span class="toc-dot"></span> 06. Cek Fakta Sejarah</a></li>
+        <li><a href="#bab-7"><span class="toc-dot"></span> 07. Refleksi &amp; Kesan</a></li>
+      </ul>
+
+      <div class="read-meter">
+        <div class="read-meter-top">
+          <span>Progres Baca</span>
+          <strong id="readPct">0%</strong>
+        </div>
+        <div class="meter-bar">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <!-- BAB 01 -->
+      <article class="chapter" id="bab-1">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 01 • KEDATANGAN &amp; SUASANA</span>
+          <h2>Melangkah ke Pelataran Luas yang Menyimpan Memori Bangsa</h2>
+        </div>
+
+        <div class="media-split">
+          <figure class="frame-card">
+            <img
+              src="images/halaman-upacara.jpg"
+              alt="Pelataran upacara luas di Kompleks Monumen Pancasila Sakti dengan bendera Merah Putih dan gedung Museum Pengkhianatan PKI"
+              data-lightbox-src="images/halaman-upacara.jpg"
+            />
+            <figcaption>
+              <strong>Lapangan Upacara Kompleks.</strong> Tiang bendera Merah Putih berdiri tegak tepat di hadapan gedung museum berjendela merah bata.
+            </figcaption>
+          </figure>
+
+          <div>
+            <p>
+              Ada perbedaan besar antara membaca sejarah lewat paragraf cetak di kelas dengan menginjakkan kaki langsung di tempat peristiwa itu pernah berlangsung. Itulah kesan pertama yang langsung kurasakan ketika rombongan kami tiba di <strong>Kompleks Monumen Pancasila Sakti</strong>, Lubang Buaya, Jakarta Timur.
+            </p>
+            <p>
+              Begitu melewati pintu masuk, pandangan langsung disambut lapangan upacara yang sangat lapang di bawah langit siang yang cerah. Bendera Merah Putih berkibar tenang di depan gedung besar beratap limasan gelap dengan deretan jendela merah bata yang khas—gedung <strong>Museum Pengkhianatan PKI (Komunis)</strong> yang di bagian serambi depannya terparkir kendaraan lapis baja Panser.
+            </p>
+            <p>
+              Suasana di kawasan ini terasa begitu teratur dan hening dibandingkan ramainya jalan raya Jakarta di luar pagar. Dari halaman terbuka inilah kami mulai menelusuri satu per satu zona bersejarah yang merangkum babak penting perjalanan Republik Indonesia.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- BAB 02 -->
+      <article class="chapter" id="bab-2">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 02 • MONUMEN PANCASILA SAKTI</span>
+          <h2>Kemegahan Tujuh Patung Perunggu di Bawah Sayap Garuda</h2>
+        </div>
+
+        <p>
+          Berjalan menyusuri jalur pepohonan rindang, kami akhirnya tiba di titik paling ikonik di kawasan ini: <strong>Monumen Pancasila Sakti</strong>. Tangga marmer hitam yang memantulkan cahaya mengantarkan tatapan mata naik ke relief perunggu berbingkai garis merah, lalu ke tujuh patung perunggu Pahlawan Revolusi yang berdiri tegak di depan lambang <strong>Burung Garuda Pancasila</strong> raksasa.
+        </p>
+        <p>
+          Relief panjang di kaki patung itu bukan sekadar hiasan arsitektur, melainkan pahatan kronologis yang menceritakan rangkaian peristiwa pergolakan 1965 hingga penegakan kembali Pancasila. Berdiri di pelatarannya membuat kami merasa kecil sekaligus takjub pada keteguhan para perwira yang gugur menjalankan tugas negara.
+        </p>
+
+        <!-- Interactive Moment Switcher (2 Group Photos) -->
+        <div class="moment-box">
+          <div class="moment-top">
+            <div class="moment-title">Dua Momen di Pelataran Monumen</div>
+            <div class="toggle-pill" role="tablist" aria-label="Pilih gaya foto grup">
+              <button class="active" type="button" data-moment="formal">Potret Rapi</button>
+              <button type="button" data-moment="lompat">Pose Lompat</button>
+            </div>
+          </div>
+          <div class="moment-stage">
+            <div class="moment-img-wrap" id="momentImgWrap">
+              <img id="momentImg" src="images/grup-berdiri.jpg" alt="Foto bersama enam teman berdiri rapi di depan Monumen Pancasila Sakti" />
+            </div>
+            <div id="momentDesc">
+              <span class="mono" style="font-size:0.75rem; color:var(--brass); font-weight:600;">DOKUMENTASI 01 • POTRET BERSAMA</span>
+              <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:6px 0 10px;">Mengabadikan Langkah di Depan Relief Sejarah</h3>
+              <p>
+                Di sela-sela pengamatan, kami berenam menyempatkan diri berfoto rapi tepat di depan relief perunggu dan tujuh patung Pahlawan Revolusi. Meski suasana kunjungan sarat nilai sejarah yang khidmat, menjalaninya bersama teman-teman satu angkatan membuat pengalaman belajar di luar kelas terasa jauh lebih hidup dan hangat.
+              </p>
+              <p style="font-size:0.86rem; color:var(--ink-muted);">
+                Klik tombol <strong>Pose Lompat</strong> di kanan atas untuk melihat sisi ekspresif dokumentasi kunjungan kami di spot yang sama!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 3D Flip Cards for 7 Pahlawan Revolusi -->
+        <div class="sub-widget">
+          <div class="widget-head">
+            <h3>Kartu Bolak-Balik: Mengenal 7 Pahlawan Revolusi</h3>
+            <span>Klik kartu mana saja untuk membalik &amp; membaca peran sejarahnya</span>
+          </div>
+          <div class="flip-grid" id="flipGrid"></div>
+        </div>
+      </article>
+
+      <!-- BAB 03 -->
+      <article class="chapter" id="bab-3">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 03 • SUMUR MAUT &amp; BANGUNAN ASLI</span>
+          <h2>Keheningan Sumur Maut dan Serambi Kuning Rumah Penyiksaan</h2>
+        </div>
+
+        <p>
+          Jika area monumen memancarkan kemegahan, maka langkah berikutnya menuju <strong>Sumur Maut</strong> dan <strong>Rumah Penyiksaan</strong> langsung mengubah perasaan menjadi jauh lebih haru dan reflektif. Di area inilah peristiwa dini hari 1 Oktober 1965 benar-benar terjadi secara fisik.
+        </p>
+
+        <div class="portrait-pair">
+          <figure class="frame-card">
+            <img
+              src="images/sumur-maut.jpg"
+              alt="Sumur Maut Lubang Buaya di balik rantai pembatas merah dengan prasasti 1 Oktober 1965"
+              data-lightbox-src="images/sumur-maut.jpg"
+            />
+            <figcaption>
+              <strong>Sumur Maut Lubang Buaya.</strong> Terlihat dari balik rantai merah—lubang tanah sempit berdiameter sekitar 75 cm dengan kedalaman 12 meter yang disorot cahaya merah dari dasar.
+            </figcaption>
+          </figure>
+          <figure class="frame-card">
+            <img
+              src="images/diorama-s-parman.jpg"
+              alt="Sudut dekat diorama di dalam Rumah Penyiksaan dengan penanda nama Mayjen TNI S. Parman"
+              data-lightbox-src="images/diorama-s-parman.jpg"
+            />
+            <figcaption>
+              <strong>Sudut Dekat Diorama Rumah Penyiksaan.</strong> Rekonstruksi adegan interogasi dengan penanda nama <em>Mayjen TNI S. Parman</em> di atas meja kayu di serambi rumah kuning-hijau.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="archive-quote">
+          <p>“Tjita² perdjuangan kami untuk menegakkan kemurnian Pantja Sila tidak mungkin dipatahkan hanja dengan mengubur kami dalam sumur ini.”</p>
+          <footer>— Teks Prasasti di atas bibir Sumur Maut, Lubang Buaja 1 Oktober 1965</footer>
+        </div>
+
+        <p>
+          Hanya beberapa langkah dari pendopo sumur, berdiri <strong>Rumah Penyiksaan</strong> dengan dinding kayu kuning cerah, jendela krepyak hijau, dan langit-langit anyaman bambu yang masih dijaga keasliannya. Dari sudut pandang menyeluruh di beranda, terlihat deretan patung diorama seukuran manusia asli beserta papan keterangan dwibahasa (<em>Rumah Penyiksaan / Torturing Veranda</em>) yang menegaskan bahwa rekonstruksi ini disusun berdasarkan Berita Acara Pemeriksaan (BAP) sidang Mahmillub dan kesaksian Agen Polisi II Sukitman.
+        </p>
+
+        <figure class="frame-card" style="margin: 22px 0;">
+          <img
+            src="images/rumah-penyiksaan-lebar.jpg"
+            alt="Tampilan menyeluruh diorama Rumah Penyiksaan beserta papan keterangan dwibahasa di bagian depan"
+            data-lightbox-src="images/rumah-penyiksaan-lebar.jpg"
+          />
+          <figcaption>
+            <strong>Serambi Rumah Penyiksaan (Torturing Veranda).</strong> Tampilan menyeluruh ruang diorama yang merekam ketegangan malam penculikan para perwira tinggi TNI AD.
+          </figcaption>
+        </figure>
+
+        <!-- Interactive Accordion for Surrounding Historical Buildings -->
+        <div class="sub-widget">
+          <div class="widget-head">
+            <h3>Catatan Lapangan Spot Sekitar Sumur &amp; Museum Paseban</h3>
+            <span>Klik judul untuk membuka rincian kunjungan tiap bangunan</span>
+          </div>
+          <div class="accordion" id="spotAccordion">
+            <div class="acc-item open">
+              <button class="acc-trigger" type="button">
+                <span>1. Pos Komando — Pusat Kendali Operasi</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                Tidak jauh dari Rumah Penyiksaan terdapat bangunan rumah penduduk asli yang pada malam 30 September 1965 dijadikan Pos Komando. Melihat interior kayunya yang sederhana bersama meja, kursi, dan lampu antik membuat kita sadar betapa dekatnya lokasi perancangan peristiwa besar itu dengan permukiman warga Lubang Buaya kala itu.
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-trigger" type="button">
+                <span>2. Dapur Umum — Ruang Logistik Lapangan</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                Bangunan sederhana lainnya yang kami lewati adalah Dapur Umum. Tungku dan peralatan memasak tempo dulu masih tersimpan rapi di dalamnya sebagai bukti bagaimana kebutuhan konsumsi personel yang berkumpul di kawasan Lubang Buaya disiapkan secara terorganisir.
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-trigger" type="button">
+                <span>3. Museum Paseban &amp; Ruang Relik Pribadi</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                Masuk ke dalam Museum Paseban menghadirkan pengalaman yang paling emosional. Di <strong>Ruang Relik</strong>, tersimpan barang-barang pribadi asli milik para Pahlawan Revolusi—mulai dari pakaian terakhir yang mereka kenakan, kacamata, jam tangan, hingga dokumentasi pengangkatan jenazah oleh tim gabungan RPKAD dan KKO-AL pada 4 Oktober 1965 sebelum dimakamkan secara kenegaraan di TMP Kalibata.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- BAB 04 -->
+      <article class="chapter" id="bab-4">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 04 • ARSIP 1948 &amp; KENDARAAN BERSEJARAH</span>
+          <h2>Inspektor Artefak: Dari Majalah 1948 hingga Kendaraan Dinas Asli</h2>
+        </div>
+
+        <p>
+          Hal yang membuat kunjungan ke kompleks ini begitu kaya bukan hanya diorama 1965, melainkan juga <strong>arsip sejarah dan artefak kendaraan asli</strong> yang memperlihatkan rentang waktu konflik ideologi sejak era revolusi kemerdekaan. Salah satu temuan paling menarik di ruang pamer adalah salinan sampul majalah <strong>Mimbar Indonesia edisi 2 Oktober 1948</strong>, di samping deretan kendaraan bersejarah di pendopo luar seperti <strong>Jeep Toyota Land Cruiser ★ 44-01</strong> dan <strong>Truk Dodge B 2982 L</strong>.
+        </p>
+
+        <!-- Interactive Artifact Inspector -->
+        <div class="sub-widget">
+          <div class="widget-head">
+            <h3>Pilih Artefak untuk Diinspeksi Detailnya</h3>
+            <span>Klik tombol di bawah untuk berganti koleksi</span>
+          </div>
+          <div class="artifact-selector" id="artifactSelector">
+            <button class="art-btn active" type="button" data-art="mimbar">Arsip: Mimbar Indonesia (1948)</button>
+            <button class="art-btn" type="button" data-art="jeep">Kendaraan: Toyota Jeep ★ 44-01</button>
+            <button class="art-btn" type="button" data-art="dodge">Kendaraan: Truk Dodge B 2982 L</button>
+          </div>
+          <div class="artifact-stage" id="artifactStage" aria-live="polite"></div>
+        </div>
+      </article>
+
+      <!-- BAB 05 -->
+      <article class="chapter" id="bab-5">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 05 • KURASI DOKUMENTASI</span>
+          <h2>Galeri Lapangan: 10 Bingkai Perjalanan di Lubang Buaya</h2>
+        </div>
+        <p>
+          Saring koleksi foto berdasarkan kategori zona, lalu klik foto mana saja untuk melihat tampilan penuh dilengkapi <em>thumbnail strip</em> navigasi cepat di bagian bawah layar.
+        </p>
+
+        <div class="filter-row" id="galleryFilters">
+          <button class="f-chip active" type="button" data-cat="all">Semua (10)</button>
+          <button class="f-chip" type="button" data-cat="monumen">Monumen &amp; Momen (4)</button>
+          <button class="f-chip" type="button" data-cat="sumur">Sumur &amp; Diorama (3)</button>
+          <button class="f-chip" type="button" data-cat="arsip">Arsip &amp; Kendaraan (3)</button>
+        </div>
+
+        <div class="bento-gallery" id="bentoGallery">
+          <div class="g-tile" data-cat="monumen">
+            <img src="images/halaman-upacara.jpg" alt="Lapangan upacara dan gedung Museum Pengkhianatan PKI" data-cap="Pelataran upacara luas menghadap gedung Museum Pengkhianatan PKI dengan tiang bendera Merah Putih." />
+            <div class="g-cap">Pelataran Upacara</div>
+          </div>
+          <div class="g-tile" data-cat="monumen">
+            <img src="images/monumen-arsitektur.jpg" alt="Arsitektur penuh Monumen Pancasila Sakti" data-cap="Tampilan utuh Monumen Pancasila Sakti dari tangga marmer hitam hingga puncak Garuda Pancasila." />
+            <div class="g-cap">Monumen Pancasila Sakti</div>
+          </div>
+          <div class="g-tile" data-cat="monumen">
+            <img src="images/grup-berdiri.jpg" alt="Foto bersama berdiri rapi di pelataran monumen" data-cap="Potret kebersamaan berdiri rapi tepat di depan relief dan tujuh patung Pahlawan Revolusi." />
+            <div class="g-cap">Potret Rapi di Monumen</div>
+          </div>
+          <div class="g-tile" data-cat="monumen">
+            <img src="images/grup-lompat.jpg" alt="Pose lompat penuh semangat di depan monumen" data-cap="Momen ceria pose lompat bersama teman-teman setelah menyelesaikan eksplorasi museum." />
+            <div class="g-cap">Pose Lompat Kebersamaan</div>
+          </div>
+          <div class="g-tile" data-cat="sumur">
+            <img src="images/sumur-maut.jpg" alt="Sumur Maut Lubang Buaya" data-cap="Sumur Maut Lubang Buaya dari balik rantai pembatas merah, dilengkapi prasasti 1 Oktober 1965." />
+            <div class="g-cap">Sumur Maut</div>
+          </div>
+          <div class="g-tile" data-cat="sumur">
+            <img src="images/diorama-s-parman.jpg" alt="Sudut dekat diorama Mayjen TNI S. Parman" data-cap="Sudut dekat diorama Rumah Penyiksaan yang menampilkan penanda nama Mayjen TNI S. Parman." />
+            <div class="g-cap">Diorama Mayjen S. Parman</div>
+          </div>
+          <div class="g-tile wide" data-cat="sumur">
+            <img src="images/rumah-penyiksaan-lebar.jpg" alt="Ruang utama Diorama Rumah Penyiksaan" data-cap="Tampilan lebar serambi Rumah Penyiksaan (Torturing Veranda) beserta papan penjelasan BAP Mahmillub." />
+            <div class="g-cap">Serambi Rumah Penyiksaan</div>
+          </div>
+          <div class="g-tile" data-cat="arsip">
+            <img src="images/arsip-mimbar-1948.jpg" alt="Sampul majalah Mimbar Indonesia 2 Oktober 1948" data-cap="Arsip sampul majalah Mimbar Indonesia No. 40 tanggal 2 Oktober 1948 bergambar Bung Karno &amp; Bung Hatta." />
+            <div class="g-cap">Arsip Mimbar Indonesia 1948</div>
+          </div>
+          <div class="g-tile" data-cat="arsip">
+            <img src="images/jeep-toyota-4401.jpg" alt="Toyota Land Cruiser hijau tua berpelat ★ 44-01" data-cap="Toyota Land Cruiser hijau tua berpelat militer ★ 44-01 di bawah pendopo berpilar putih berukir emas." />
+            <div class="g-cap">Jeep Toyota ★ 44-01</div>
+          </div>
+          <div class="g-tile" data-cat="arsip">
+            <img src="images/truk-dodge-b2982l.jpg" alt="Truk Dodge biru muda berpelat B 2982 L" data-cap="Truk Dodge biru muda berpelat nomor B 2982 L lengkap dengan prasasti peresmian 29 September 1994." />
+            <div class="g-cap">Truk Dodge B 2982 L</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- BAB 06: Interactive Fact-Check Game -->
+      <article class="chapter" id="bab-6">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 06 • TANTANGAN INTERAKTIF</span>
+          <h2>Cek Fakta Sejarah: Benar atau Salah?</h2>
+        </div>
+        <p>
+          Uji ketelitianmu membaca arsip dan catatan kunjungan di atas! Tentukan apakah setiap pernyataan sejarah berikut <strong>Benar</strong> atau <strong>Salah</strong>.
+        </p>
+
+        <div class="fact-game" id="factGame"></div>
+      </article>
+
+      <!-- BAB 07: Refleksi & Visitor Pad -->
+      <article class="chapter" id="bab-7">
+        <div class="chapter-head">
+          <span class="chapter-code">BAB 07 • REFLEKSI PENUTUP</span>
+          <h2>Pelajaran yang Tertinggal Setelah Meninggalkan Lubang Buaya</h2>
+        </div>
+
+        <p>
+          Kunjungan ke Monumen Pancasila Sakti memberiku sudut pandang baru tentang arti belajar sejarah. Ketika melihat langsung arsip pers tahun 1948 yang merekam pilihan besar bangsa, berdiri di hadapan Sumur Maut yang sempit, lalu menyimak detail barang pribadi para jenderal di Museum Paseban, sejarah berhenti menjadi sekadar hafalan ujian—ia berubah menjadi pengingat tentang betapa mahalnya persatuan Indonesia.
+        </p>
+        <p>
+          Di tengah arus informasi modern yang sering memicu polarisasi dan kabar bohong, generasi muda punya tanggung jawab besar untuk tetap berpikir jernih, memverifikasi fakta, serta menjaga nilai-nilai Pancasila dalam kehidupan sehari-hari. Mengunjungi Lubang Buaya bersama teman-teman bukan hanya memenuhi tugas mata pelajaran Sejarah, melainkan juga menjadi perjalanan yang menumbuhkan rasa hormat lebih dalam kepada para pendahulu bangsa.
+        </p>
+
+        <!-- Interactive Visitor Reflection Pad -->
+        <div class="note-pad">
+          <h3>Tinggalkan Catatan Refleksimu</h3>
+          <p>Punya kesan atau pesan setelah membaca jurnal kunjungan ini? Tulis singkat di bawah ini (tersimpan otomatis di browser perangkatmu).</p>
+          <form class="note-form" id="noteForm">
+            <input type="text" id="noteAuthor" placeholder="Nama singkat (misal: Pembaca / Teman Sekelas)" maxlength="40" required />
+            <textarea id="noteText" placeholder="Tulis satu kalimat kesan atau pelajaran sejarah yang paling mengena..." maxlength="260" required></textarea>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+              <button class="action-btn" type="submit">Simpan Catatan</button>
+              <button class="mode-btn" type="button" id="copyBlogUrl" style="border:1px solid var(--border); background:var(--surface);">Salin Tautan Blog</button>
+            </div>
+          </form>
+          <div class="saved-notes" id="savedNotes"></div>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div><strong>Jejak Langkah di Lubang Buaya: Menyaksikan Saksi Bisu Sejarah 1965</strong></div>
+    <div style="margin-top:4px;">Jurnal Tugas Sejarah Indonesia • Kelas XII, MAN 14 Jakarta • Kompleks Monumen Pancasila Sakti, Jakarta Timur</div>
+  </footer>
+
+  <!-- Lightbox with Thumbnail Strip -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri layar penuh">
+    <div class="lb-top">
+      <div class="lb-badge" id="lbCounter">1 / 10</div>
+      <button class="lb-close" id="lbClose" aria-label="Tutup">&times;</button>
+    </div>
+    <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Foto sebelumnya">&#8249;</button>
+    <img class="lb-main-img" id="lbImg" src="" alt="" />
+    <button class="lb-arrow lb-next" id="lbNext" aria-label="Foto berikutnya">&#8250;</button>
+    <div class="lb-cap" id="lbCap"></div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+  </div>
+
+  <script>
+    // ===== 1. 3-Mode Theme Switcher (Terang / Arsip Sepia / Malam) =====
+    const htmlEl = document.documentElement;
+    const modeBtns = document.querySelectorAll(".mode-btn[data-set-theme]");
+
+    function setTheme(mode) {
+      htmlEl.setAttribute("data-theme", mode);
+      localStorage.setItem("lb-friend-theme", mode);
+      modeBtns.forEach((b) => b.classList.toggle("active", b.dataset.setTheme === mode));
+    }
+
+    setTheme(localStorage.getItem("lb-friend-theme") || "light");
+    modeBtns.forEach((btn) => btn.addEventListener("click", () => setTheme(btn.dataset.setTheme)));
+
+    // ===== 2. Sidebar Scroll-Spy & Reading Meter =====
+    const chapters = document.querySelectorAll("article.chapter[id]");
+    const tocLinks = document.querySelectorAll("#sidebarNav a, #mobileNav a");
+    const meterFill = document.getElementById("meterFill");
+    const readPct = document.getElementById("readPct");
+
+    window.addEventListener("scroll", () => {
+      const top = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = maxScroll > 0 ? Math.min(100, Math.round((top / maxScroll) * 100)) : 0;
+      meterFill.style.width = pct + "%";
+      readPct.textContent = pct + "%";
+
+      let activeId = "bab-1";
+      chapters.forEach((ch) => {
+        if (top >= ch.offsetTop - 160) activeId = ch.id;
+      });
+      tocLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + activeId));
+    });
+
+    // ===== 3. Interactive Moment Switcher (Formal vs Jump) =====
+    const momentData = {
+      formal: {
+        src: "images/grup-berdiri.jpg",
+        alt: "Foto bersama berdiri rapi di depan Monumen Pancasila Sakti",
+        code: "DOKUMENTASI 01 • POTRET BERSAMA",
+        title: "Mengabadikan Langkah di Depan Relief Sejarah",
+        p1: "Di sela-sela pengamatan, kami berenam menyempatkan diri berfoto rapi tepat di depan relief perunggu dan tujuh patung Pahlawan Revolusi. Meski suasana kunjungan sarat nilai sejarah yang khidmat, menjalaninya bersama teman-teman satu angkatan membuat pengalaman belajar di luar kelas terasa jauh lebih hidup dan hangat.",
+        p2: "Klik tombol <strong>Pose Lompat</strong> di kanan atas untuk melihat sisi ekspresif dokumentasi kunjungan kami di spot yang sama!"
+      },
+      lompat: {
+        src: "images/grup-lompat.jpg",
+        alt: "Foto bersama pose lompat penuh semangat di depan Monumen Pancasila Sakti",
+        code: "DOKUMENTASI 02 • MOMEN EKSPRESIF",
+        title: "Energi Generasi Muda di Pelataran Monumen",
+        p1: "Setelah tuntas menyusuri hampir seluruh sudut kompleks, kami menutup sesi dokumentasi di pelataran marmer hitam dengan pose lompat kompak penuh energi. Foto ini jadi pengingat bahwa menghargai sejarah juga berarti melangkah maju dengan semangat positif sebagai pelajar masa kini.",
+        p2: "Klik foto untuk memperbesar, atau kembali ke <strong>Potret Rapi</strong> untuk membandingkan kedua momennya."
+      }
+    };
+
+    const momentImg = document.getElementById("momentImg");
+    const momentDesc = document.getElementById("momentDesc");
+    const momentBtns = document.querySelectorAll(".toggle-pill button");
+
+    momentBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const key = btn.dataset.moment;
+        const m = momentData[key];
+        momentBtns.forEach((b) => b.classList.toggle("active", b === btn));
+        momentImg.src = m.src;
+        momentImg.alt = m.alt;
+        momentDesc.innerHTML = `
+          <span class="mono" style="font-size:0.75rem; color:var(--brass); font-weight:600;">${m.code}</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:6px 0 10px;">${m.title}</h3>
+          <p>${m.p1}</p>
+          <p style="font-size:0.86rem; color:var(--ink-muted);">${m.p2}</p>
+        `;
+      });
+    });
+
+    document.getElementById("momentImgWrap").addEventListener("click", () => {
+      openLightboxBySrc(momentImg.getAttribute("src"));
+    });
+
+    // ===== 4. Interactive 3D Flip Cards (7 Pahlawan Revolusi) =====
+    const heroes = [
+      {
+        rank: "JENDERAL TNI (ANUMERTA)",
+        name: "Ahmad Yani",
+        role: "Menteri / Panglima AD",
+        fact: "Lahir di Purworejo (1922). Patungnya berdiri di tengah monumen dengan tangan menunjuk tegas ke depan, melambangkan keteguhan menjaga Pancasila."
+      },
+      {
+        rank: "LETJEN TNI (ANUMERTA)",
+        name: "R. Suprapto",
+        role: "Deputi II Men/Pangad",
+        fact: "Lahir di Purwokerto (1920). Pernah menjadi ajudan Panglima Besar Jenderal Sudirman pada masa perang kemerdekaan sebelum menjabat Deputi II."
+      },
+      {
+        rank: "LETJEN TNI (ANUMERTA)",
+        name: "M.T. Haryono",
+        role: "Deputi III Men/Pangad",
+        fact: "Lahir di Surabaya (1924). Perwira cerdas yang fasih berbahasa asing dan pernah aktif dalam perundingan diplomasi Konferensi Meja Bundar."
+      },
+      {
+        rank: "LETJEN TNI (ANUMERTA)",
+        name: "S. Parman",
+        role: "Asisten I Intelijen",
+        fact: "Lahir di Wonosobo (1918). Figur sentral bidang intelijen TNI AD; penanda namanya (Mayjen TNI S. Parman) terlihat jelas pada diorama Rumah Penyiksaan."
+      },
+      {
+        rank: "MAYJEN TNI (ANUMERTA)",
+        name: "D.I. Panjaitan",
+        role: "Asisten IV Logistik",
+        fact: "Lahir di Balige (1925). Berperan besar dalam bidang logistik TNI AD dan dikenal memiliki keteguhan iman serta disiplin tinggi hingga akhir hayatnya."
+      },
+      {
+        rank: "MAYJEN TNI (ANUMERTA)",
+        name: "Sutoyo Siswomiharjo",
+        role: "Oditur Jenderal TNI AD",
+        fact: "Lahir di Kebumen (1922). Mengemban amanah sebagai Inspektur Kehakiman TNI AD sebelum diculik dari kediamannya pada dini hari 1 Oktober 1965."
+      },
+      {
+        rank: "KAPTEN CZI (ANUMERTA)",
+        name: "Pierre A. Tendean",
+        role: "Ajudan Jenderal A.H. Nasution",
+        fact: "Lahir di Batavia (1939). Pahlawan Revolusi termuda (26 tahun) yang rela menyamar sebagai Jenderal Nasution demi menyelamatkan atasannya."
+      }
+    ];
+
+    const flipGrid = document.getElementById("flipGrid");
+    heroes.forEach((h) => {
+      const card = document.createElement("div");
+      card.className = "flip-card";
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Balik kartu ${h.name}`);
+      card.innerHTML = `
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="f-rank">${h.rank}</span>
+            <div class="f-name">${h.name}</div>
+            <span class="f-tip">↻ Klik untuk melihat peran</span>
+          </div>
+          <div class="flip-face flip-back">
+            <div>
+              <strong>${h.role}</strong>
+              <p>${h.fact}</p>
+            </div>
+            <span style="font-size:0.7rem; opacity:0.8;">↺ Klik untuk kembali</span>
+          </div>
+        </div>
+      `;
+      const toggle = () => card.classList.toggle("flipped");
+      card.addEventListener("click", toggle);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+      flipGrid.appendChild(card);
+    });
+
+    // ===== 5. Interactive Accordion (Bab 03) =====
+    document.querySelectorAll("#spotAccordion .acc-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains("open");
+        document.querySelectorAll("#spotAccordion .acc-item").forEach((el) => el.classList.remove("open"));
+        if (!wasOpen) item.classList.add("open");
+      });
+    });
+
+    // ===== 6. Interactive Artifact Inspector (Bab 04) =====
+    const artifacts = {
+      mimbar: {
+        src: "images/arsip-mimbar-1948.jpg",
+        code: "ARSIP PERS • EDISI NO. 40",
+        title: "Majalah Mimbar Indonesia (2 Oktober 1948)",
+        specs: [
+          { k: "Tanggal Terbit", v: "2 Oktober 1948" },
+          { k: "Tokoh Sampul", v: "Bung Karno & Bung Hatta" },
+          { k: "Konteks Sejarah", v: "Peristiwa Madiun 1948" },
+          { k: "Kutipan Sampul", v: "“Sukarno—Hatta atau Muso”" }
+        ],
+        desc: "Di ruang pamer museum, arsip sampul majalah independen non-partai <strong>Mimbar Indonesia</strong> ini langsung menarik perhatianku. Terbit tak lama setelah pecahnya Peristiwa Madiun September 1948, sampulnya memuat potret Dwi Tunggal Soekarno–Hatta beserta kutipan pidato tegas Bung Karno: <em>“Rakjat boleh pilih, Sukarno—Hatta atau Muso.”</em> Terlihat pula daftar artikel sezaman karya Sukardjo Wirjopranoto, Prof. Mr. Dr. Supomo, dan Rivai Apin—menunjukkan betapa gentingnya suasana politik Republik saat itu."
+      },
+      jeep: {
+        src: "images/jeep-toyota-4401.jpg",
+        code: "KOLEKSI KENDARAAN • PENDOPO PILAR EMAS",
+        title: "Toyota Land Cruiser Dinas (Pelat ★ 44-01)",
+        specs: [
+          { k: "Jenis Kendaraan", v: "Toyota Land Cruiser (Canvas)" },
+          { k: "Nomor Pelat", v: "★ 44-01 (Bintang Satu)" },
+          { k: "Warna Bodi", v: "Hijau Tua Militer" },
+          { k: "Lokasi Pajang", v: "Pendopo Pilar Putih Berukir Emas" }
+        ],
+        desc: "Dipajang secara khusus di bawah pendopo berlantai marmer dengan empat pilar putih berukir emas, kendaraan <strong>Toyota Land Cruiser hijau tua berpelat ★ 44-01</strong> ini merupakan mobil dinas Panglima Kostrad (Mayjen TNI Soeharto) yang digunakan pada 1 Oktober 1965 ketika mengoordinasikan langkah pemulihan keamanan nasional. Pelat bintang satu dan bumper garis merah-kuningnya masih terawat utuh sebagai saksi bisu masa transisi sejarah."
+      },
+      dodge: {
+        src: "images/truk-dodge-b2982l.jpg",
+        code: "KOLEKSI KENDARAAN • PENDOPO TERBUKA",
+        title: "Truk Dodge Biru Muda (Pelat B 2982 L)",
+        specs: [
+          { k: "Merek & Model", v: "Truk Dodge Terpal Kanvas" },
+          { k: "Nomor Pelat", v: "B 2982 L" },
+          { k: "Prasasti Peresmian", v: "Kapusjarah ABRI, 29 Sep 1994" },
+          { k: "Kondisi", v: "Tersimpan utuh di bawah atap kayu" }
+        ],
+        desc: "Berdiri tepat di bawah pendopo beratap kayu terbuka, <strong>Truk Dodge berwarna biru muda berpelat nomor B 2982 L</strong> ini menjadi salah satu objek paling ikonik di area kendaraan bersejarah. Di bagian depannya terpasang prasasti hitam-oranye peresmian oleh Kapusjarah ABRI tertanggal 29 September 1994 beserta papan informasi sejarahnya—menghadirkan wujud fisik yang sangat nyata dari peristiwa yang selama ini hanya kita baca di buku."
+      }
+    };
+
+    const artBtns = document.querySelectorAll("#artifactSelector .art-btn");
+    const artStage = document.getElementById("artifactStage");
+
+    function renderArtifact(key) {
+      const a = artifacts[key];
+      artBtns.forEach((b) => b.classList.toggle("active", b.dataset.art === key));
+      artStage.innerHTML = `
+        <img src="${a.src}" alt="${a.title}" id="artStageImg" />
+        <div>
+          <span class="mono" style="font-size:0.74rem; color:var(--brass); font-weight:600;">${a.code}</span>
+          <h3 style="font-family:'Playfair Display',serif; font-size:1.3rem; margin:4px 0 10px;">${a.title}</h3>
+          <div class="art-specs">
+            ${a.specs.map((s) => `<div class="art-spec"><span>${s.k}</span><strong>${s.v}</strong></div>`).join("")}
+          </div>
+          <p style="font-size:0.94rem; margin-bottom:0;">${a.desc}</p>
+        </div>
+      `;
+      document.getElementById("artStageImg").addEventListener("click", () => openLightboxBySrc(a.src));
+    }
+
+    artBtns.forEach((btn) => btn.addEventListener("click", () => renderArtifact(btn.dataset.art)));
+    renderArtifact("mimbar");
+
+    // ===== 7. Filterable Gallery + Thumbnail Lightbox (10 Photos) =====
+    const filterChips = document.querySelectorAll("#galleryFilters .f-chip");
+    const gTiles = document.querySelectorAll("#bentoGallery .g-tile");
+
+    filterChips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const cat = chip.dataset.cat;
+        filterChips.forEach((c) => c.classList.toggle("active", c === chip));
+        gTiles.forEach((tile) => {
+          tile.classList.toggle("hide", cat !== "all" && tile.dataset.cat !== cat);
+        });
+      });
+    });
+
+    const allPhotos = Array.from(document.querySelectorAll("#bentoGallery .g-tile img")).map((img) => ({
+      src: img.getAttribute("src"),
+      alt: img.alt,
+      cap: img.dataset.cap || img.alt
+    }));
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbCap = document.getElementById("lbCap");
+    const lbCounter = document.getElementById("lbCounter");
+    const lbThumbs = document.getElementById("lbThumbs");
+    let lbIndex = 0;
+
+    allPhotos.forEach((p, i) => {
+      const th = document.createElement("div");
+      th.className = "lb-thumb";
+      th.innerHTML = `<img src="${p.src}" alt="${p.alt}" />`;
+      th.addEventListener("click", () => {
+        lbIndex = i;
+        updateLightbox();
+      });
+      lbThumbs.appendChild(th);
+    });
+
+    function updateLightbox() {
+      const p = allPhotos[lbIndex];
+      lbImg.src = p.src;
+      lbImg.alt = p.alt;
+      lbCap.textContent = p.cap;
+      lbCounter.textContent = `${lbIndex + 1} / ${allPhotos.length}`;
+      lbThumbs.querySelectorAll(".lb-thumb").forEach((t, i) => {
+        t.classList.toggle("active", i === lbIndex);
+      });
+    }
+
+    function openLightboxBySrc(src) {
+      const idx = allPhotos.findIndex((p) => p.src === src);
+      lbIndex = idx >= 0 ? idx : 0;
+      updateLightbox();
+      lb.classList.add("open");
+    }
+
+    document.querySelectorAll("[data-lightbox-src], #bentoGallery .g-tile img").forEach((el) => {
+      el.addEventListener("click", () => {
+        const src = el.dataset.lightboxSrc || el.getAttribute("src");
+        openLightboxBySrc(src);
+      });
+    });
+
+    const closeLb = () => lb.classList.remove("open");
+    document.getElementById("lbClose").addEventListener("click", closeLb);
+    document.getElementById("lbPrev").addEventListener("click", () => {
+      lbIndex = (lbIndex - 1 + allPhotos.length) % allPhotos.length;
+      updateLightbox();
+    });
+    document.getElementById("lbNext").addEventListener("click", () => {
+      lbIndex = (lbIndex + 1) % allPhotos.length;
+      updateLightbox();
+    });
+    lb.addEventListener("click", (e) => {
+      if (e.target === lb) closeLb();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowLeft") {
+        lbIndex = (lbIndex - 1 + allPhotos.length) % allPhotos.length;
+        updateLightbox();
+      }
+      if (e.key === "ArrowRight") {
+        lbIndex = (lbIndex + 1) % allPhotos.length;
+        updateLightbox();
+      }
+    });
+
+    let swipeStart = 0;
+    lb.addEventListener("touchstart", (e) => (swipeStart = e.changedTouches[0].screenX), { passive: true });
+    lb.addEventListener("touchend", (e) => {
+      const dx = e.changedTouches[0].screenX - swipeStart;
+      if (Math.abs(dx) > 45) {
+        lbIndex = (lbIndex + (dx > 0 ? -1 : 1) + allPhotos.length) % allPhotos.length;
+        updateLightbox();
+      }
+    }, { passive: true });
+
+    // ===== 8. Interactive Fact-Check Game (Benar / Salah) =====
+    const statements = [
+      {
+        text: "Majalah Mimbar Indonesia edisi No. 40 yang dipamerkan di museum terbit pada 2 Oktober 1948 dengan foto Bung Karno dan Bung Hatta di sampulnya.",
+        isTrue: true,
+        explain: "Benar! Edisi 2 Oktober 1948 tersebut memuat kutipan terkenal Bung Karno saat Peristiwa Madiun: “Rakjat boleh pilih, Sukarno—Hatta atau Muso.”"
+      },
+      {
+        text: "Sumur Maut di Lubang Buaya memiliki diameter yang sangat lebar, yaitu sekitar 3 meter dengan kedalaman hanya 4 meter.",
+        isTrue: false,
+        explain: "Salah! Sumur Maut justru sangat sempit, diameternya hanya sekitar 75 sentimeter dengan kedalaman mencapai 12 meter."
+      },
+      {
+        text: "Salah satu diorama di dalam Rumah Penyiksaan menampilkan penanda nama Mayjen TNI S. Parman di meja kayu serambi.",
+        isTrue: true,
+        explain: "Benar! Pada sudut dekat di serambi kuning-hijau Rumah Penyiksaan, penanda nama Mayjen TNI S. Parman terlihat jelas di depan patung diorama."
+      },
+      {
+        text: "Kendaraan Jeep Toyota Land Cruiser hijau tua yang dipajang di pendopo berpilar putih berukir emas memiliki nomor pelat ★ 44-01.",
+        isTrue: true,
+        explain: "Benar! Toyota Land Cruiser hijau tua berpelat bintang satu ★ 44-01 adalah kendaraan dinas Panglima Kostrad yang menjadi salah satu koleksi utama kompleks."
+      },
+      {
+        text: "Kapten CZI (Anumerta) Pierre Andreas Tendean adalah perwira paling senior dan tertua di antara tujuh Pahlawan Revolusi di Lubang Buaya.",
+        isTrue: false,
+        explain: "Salah! Pierre Andreas Tendean (kelahiran 1939) justru merupakan Pahlawan Revolusi termuda yang gugur pada usia 26 tahun saat melindungi Jenderal A.H. Nasution."
+      },
+      {
+        text: "Truk Dodge biru muda berpelat nomor B 2982 L diresmikan sebagai koleksi monumen oleh Kapusjarah ABRI pada 29 September 1994.",
+        isTrue: true,
+        explain: "Benar! Tanggal peresmian 29 September 1994 tertera langsung pada prasasti hitam-oranye di depan Truk Dodge B 2982 L."
+      }
+    ];
+
+    const fgWrap = document.getElementById("factGame");
+    let fgIdx = 0;
+    let fgScore = 0;
+    let fgStreak = 0;
+    let fgLocked = false;
+
+    function renderFactGame() {
+      if (fgIdx >= statements.length) {
+        const badge =
+          fgScore === statements.length
+            ? "Kurator Sejarah Andal!"
+            : fgScore >= 4
+            ? "Penjelajah Arsip Cermat!"
+            : "Pembelajar Sejarah Antusias!";
+        fgWrap.innerHTML = `
+          <div style="text-align:center; padding:14px 6px;">
+            <span class="streak-pill" style="display:inline-block; margin-bottom:10px;">${badge}</span>
+            <div style="font-family:'Playfair Display',serif; font-size:2.3rem; font-weight:800; color:var(--primary);">${fgScore} / ${statements.length}</div>
+            <p style="color:var(--ink-muted); margin:8px 0 18px;">Terima kasih sudah mengikuti tantangan Cek Fakta dari dokumentasi kunjungan Lubang Buaya.</p>
+            <button class="action-btn" type="button" id="fgRestart">Main Lagi</button>
+          </div>
+        `;
+        document.getElementById("fgRestart").addEventListener("click", () => {
+          fgIdx = 0;
+          fgScore = 0;
+          fgStreak = 0;
+          renderFactGame();
+        });
+        return;
+      }
+
+      fgLocked = false;
+      const s = statements[fgIdx];
+      fgWrap.innerHTML = `
+        <div class="fg-top">
+          <span>Pernyataan ${fgIdx + 1} dari ${statements.length} • Skor: ${fgScore}</span>
+          <span class="streak-pill">Streak Benar: ${fgStreak}</span>
+        </div>
+        <div class="fg-statement">“${s.text}”</div>
+        <div class="fg-btns">
+          <button class="tf-btn" type="button" data-ans="true">✓ Benar (Fakta)</button>
+          <button class="tf-btn" type="button" data-ans="false">✕ Salah (Keliru)</button>
+        </div>
+        <div class="fg-explain" id="fgExplain"></div>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="action-btn" type="button" id="fgNext" disabled>
+            ${fgIdx === statements.length - 1 ? "Lihat Hasil Akhir" : "Lanjut →"}
+          </button>
+        </div>
+      `;
+
+      const btns = fgWrap.querySelectorAll(".tf-btn");
+      const exp = document.getElementById("fgExplain");
+      const nextBtn = document.getElementById("fgNext");
+
+      btns.forEach((b) => {
+        b.addEventListener("click", () => {
+          if (fgLocked) return;
+          fgLocked = true;
+          const choice = b.dataset.ans === "true";
+          const isCorrect = choice === s.isTrue;
+          btns.forEach((el) => {
+            el.disabled = true;
+            const val = el.dataset.ans === "true";
+            if (val === s.isTrue) el.classList.add("right");
+            else if (val === choice) el.classList.add("wrong");
+          });
+
+          if (isCorrect) {
+            fgScore++;
+            fgStreak++;
+            exp.className = "fg-explain show ok";
+            exp.textContent = s.explain;
+          } else {
+            fgStreak = 0;
+            exp.className = "fg-explain show bad";
+            exp.textContent = s.explain;
+          }
+          nextBtn.disabled = false;
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        fgIdx++;
+        renderFactGame();
+      });
+    }
+    renderFactGame();
+
+    // ===== 9. Interactive Local Visitor Reflection Pad & Copy Link =====
+    const noteForm = document.getElementById("noteForm");
+    const savedNotesEl = document.getElementById("savedNotes");
+    const STORAGE_KEY = "lb-friend-notes-v1";
+
+    function loadNotes() {
+      let notes = [];
+      try {
+        notes = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      } catch {
+        notes = [];
+      }
+      if (notes.length === 0) {
+        savedNotesEl.innerHTML = `
+          <div class="saved-note-item">
+            <strong>Catatan Pembuka</strong>
+            Melihat langsung arsip 1948 dan Sumur Maut bikin sejarah terasa jauh lebih nyata daripada sekadar baca ringkasan.
+          </div>
+        `;
+        return;
+      }
+      savedNotesEl.innerHTML = notes
+        .map((n) => `<div class="saved-note-item"><strong>${escapeHtml(n.author)} • ${escapeHtml(n.date)}</strong>${escapeHtml(n.text)}</div>`)
+        .join("");
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+    }
+
+    noteForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const author = document.getElementById("noteAuthor").value.trim();
+      const text = document.getElementById("noteText").value.trim();
+      if (!author || !text) return;
+      let notes = [];
+      try {
+        notes = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      } catch {
+        notes = [];
+      }
+      const date = new Date().toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" });
+      notes.unshift({ author, text, date });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(notes.slice(0, 8)));
+      noteForm.reset();
+      loadNotes();
+    });
+
+    loadNotes();
+
+    const copyBtn = document.getElementById("copyBlogUrl");
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.textContent = "Tautan Tersalin ✓";
+        setTimeout(() => (copyBtn.textContent = "Salin Tautan Blog"), 2200);
+      } catch {
+        copyBtn.textContent = "Salin dari Address Bar";
+        setTimeout(() => (copyBtn.textContent = "Salin Tautan Blog"), 2200);
+      }
+    });
+  </script>
+</body>
+</html>
